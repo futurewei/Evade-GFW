@@ -205,12 +205,12 @@ class PacketUtils:
         #self.send_pkt(payload=triggerfetch, flags="P",sport = src_port, seq= tcp.ack, ack= tcp.seq+1)
         result = self.get_pkt()
         if result == None:
-            return "DEAD~"
+            return "DEAD"
         while result != None:
             if isRST(result):
-                return "FIREWALL~"
+                return "FIREWALL"
             result = self.get_pkt()
-        return "LIVE~"
+        return "LIVE"
 
 
     # Format is
@@ -239,7 +239,7 @@ class PacketUtils:
                 if isTimeExceeded(result):
                     ips[len(ips) - 1] = result[IP].src
                 if isRST(result):
-                    print ("get a reset~")
+                    print ("get a reset")
                     Rsts[len(Rsts) -1] = True
                 result = self.get_pkt()
         return ips, Rsts

@@ -1,5 +1,8 @@
-What is the TTL of the real replies from the server:  INSERT_HERE
+What is the TTL of the real replies from the server: 
+229
+What is the TTL of the injected packets from the Great Firewall:  
+223
 
-What is the TTL of the injected packets from the Great Firewall:  INSERT_HERE
-
-How many RST packets did the Great Firewall inject:  INSERT_HERE
+How many RST packets did the Great Firewall inject:  
+Great Firewall injects 3 RST packets.
+The main reason for this is because Great Firewall cannot stop message sent to server, so it has to send 3 RST to make sure it can disconnect sender’s communication before server responses arrives.
